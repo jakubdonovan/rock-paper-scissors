@@ -3,9 +3,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/javascript/main.js" defer></script>
+    <script src="https://kit.fontawesome.com/92b88ff8f4.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
-    Open the browser console, type playGame() and start playing by pressing enter.
+    <div class='start-menu'>
+        <h1 class="title">Rock Paper Scissors</h1>
+        
+        <form class="start-menu-options">
+
+            <div class="combined-button">
+                <div>
+                    <label>Let's play best of</label>
+                    <input id='input-bestof' min="1" type="number" placeholder="3">
+                </div>
+                <button id="button-submit" type="button"><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </form>
+
+
+        <div class="score-tracker">
+            <h2 class="player" id="playerOne">Player</h2>
+            <p class="score">
+                <span id="player-score">0</span>
+                :
+                <span id="computer-score">0</span>
+            </p>
+            <h2 class="player" id="playerTwo">Computer</h2>
+        </div>
+    </div>
+
+    <div id="game">
+        <h2 class="winner">Choose an option</h2>
+
+        <div class="hands">
+            <img class="player-hand" src="/Projects/rock-paper-scissors/assets/media/rock.png" alt="rock">
+            <img class="computer-hand" src="/Projects/rock-paper-scissors/assets/media/rock.png" alt="rock">
+        </div>
+
+        <div class="hand-options">
+            <button class="rock">Rock</button>
+            <button class="paper">Paper</button>
+            <button class="scissors">Scissors</button>
+        </div>
+    </div>
 </body>
 </html>

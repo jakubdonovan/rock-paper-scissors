@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto&display=swap");
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  font-family: "Roboto";
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  row-gap: 30vh;
+  background: #F3F4F7;
+}
+
+.start-menu {
+  height: 25rem;
+  width: 70rem;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  row-gap: 0.6rem;
+  border-radius: 2rem;
+  margin-top: 30vh;
+}
+.start-menu > * {
+  background: #FFFFFF;
+  height: 100%;
+  width: 100%;
+}
+.start-menu .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  font-size: 3rem;
+  color: #000000;
+  border-radius: 2rem 2rem 0 0;
+}
+.start-menu .start-menu-options {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  border-radius: 0 0 2rem 2rem;
+  column-gap: 1rem;
+}
+.start-menu .start-menu-options .combined-button {
+  height: 4rem;
+  width: 27rem;
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  position: absolute;
+  margin: 17.5rem auto auto auto;
+  transition: all 0.2s ease-in-out;
+  background: #623CEA;
+  border-radius: 1rem;
+}
+.start-menu .start-menu-options .combined-button:hover {
+  transform: scale(1.02);
+}
+.start-menu .start-menu-options .combined-button:hover #button-submit {
+  background: #E50042;
+}
+.start-menu .start-menu-options .combined-button div {
+  display: flex;
+  column-gap: 1rem;
+  margin: 0.7rem;
+}
+.start-menu .start-menu-options .combined-button div label {
+  align-self: center;
+  justify-self: start;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+.start-menu .start-menu-options .combined-button div #input-bestof {
+  width: 4rem;
+  padding: 1rem;
+  color: #ffffff;
+  font-size: 1.8rem;
+  background: #8772d3d2;
+  border-radius: 0.5rem;
+  appearance: textfield;
+}
+.start-menu .start-menu-options .combined-button #button-submit {
+  height: 4rem;
+  width: 4rem;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+  background: #623CEA;
+  border-radius: 1rem;
+  transition: all 0.15s ease-in;
+}
+.start-menu .start-menu-options .combined-button #button-submit:active {
+  background: #E50042;
+}
+.start-menu .score-tracker {
+  display: none;
+  grid-template: 1fr 1fr/1fr 0.5fr 1fr;
+  grid-template-areas: ". score ." "player1 . player2";
+  gap: 0.1rem 5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 2rem 2rem;
+}
+.start-menu .score-tracker .score {
+  grid-area: score;
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  font-size: 5rem;
+  font-weight: bold;
+  color: #CDD2D6;
+}
+.start-menu .score-tracker #player-score, .start-menu .score-tracker #computer-score {
+  color: #0C2339;
+  margin: 0 0.5rem;
+}
+.start-menu .score-tracker #playerOne {
+  grid-area: player1;
+  align-items: end;
+}
+.start-menu .score-tracker #playerTwo {
+  grid-area: player2;
+  align-items: start;
+}
+.start-menu .score-tracker h2 {
+  font-size: 3rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+#game {
+  width: 49rem;
+  display: none;
+  align-self: center;
+  grid-template: 7rem 20rem 4rem/1fr;
+  grid-template-areas: "winner" "hands" "hand-options";
+}
+#game .winner {
+  grid-area: winner;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+}
+#game .hands {
+  grid-area: hands;
+  display: flex;
+  justify-content: space-around;
+}
+#game .hands .player-hand {
+  height: 15rem;
+  transform: rotateY(180deg);
+}
+#game .hands .computer-hand {
+  height: 15rem;
+}
+@keyframes shakePlayer {
+  0% {
+    transform: rotateY(180deg) translateY(0);
+  }
+  15% {
+    transform: rotateY(180deg) translateY(-20px);
+  }
+  25% {
+    transform: rotateY(180deg) translateY(0);
+  }
+  35% {
+    transform: rotateY(180deg) translateY(-20px);
+  }
+  50% {
+    transform: rotateY(180deg) translateY(0);
+  }
+  65% {
+    transform: rotateY(180deg) translateY(-20px);
+  }
+  75% {
+    transform: rotateY(180deg) translateY(0);
+  }
+  85% {
+    transform: rotateY(180deg) translateY(-20px);
+  }
+  100% {
+    transform: rotateY(180deg) translateY(0);
+  }
+}
+@keyframes shakeComputer {
+  0% {
+    transform: translateY(0);
+  }
+  15% {
+    transform: translateY(-20px);
+  }
+  25% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  65% {
+    transform: translateY(-20px);
+  }
+  75% {
+    transform: translateY(0);
+  }
+  85% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+#game .hand-options {
+  grid-area: hand-options;
+  display: flex;
+  justify-content: space-around;
+}
+#game .hand-options .rock, #game .hand-options .paper, #game .hand-options .scissors {
+  height: 4rem;
+  width: 14rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: #623CEA;
+  border-radius: 1rem;
+}
+#game .hand-options .rock:hover, #game .hand-options .paper:hover, #game .hand-options .scissors:hover {
+  transform: scale(1.03);
+  background: #E50042;
+}
+
+/*# sourceMappingURL=style.css.map */
