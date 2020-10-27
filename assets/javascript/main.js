@@ -60,7 +60,7 @@ const game = () => {
                     compareHands(playerChoice, computerChoice)
                     
                     // Updates hand images
-                    playerHand.src = `./assets/media/${this.textContent}.png`
+                    playerHand.src = `./assets/media/${this.textContent.toLowerCase()}.png`
                     computerHand.src = `./assets/media/${computerChoice}.png`
 
                     // Updats the scoreboard
